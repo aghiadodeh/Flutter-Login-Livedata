@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'base_response.g.dart';
 
 /*
-{
+{ 
   "success": true,
   "message": "done",
-  "data": {
-    "user": {
+  "data": { 
+    "user": { 
       "_id": "6252341d34a3425efe28b30f",
       "username": "Aghiad Odeh",
       "email": "aghiadodeh@gmail.com"

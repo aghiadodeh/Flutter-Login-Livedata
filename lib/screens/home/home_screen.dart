@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_state_managment/main.dart';
 import 'package:flutter_login_state_managment/network/managers/authentication_manager.dart';
 import 'package:flutter_login_state_managment/screens/login/login_screen.dart';
 
