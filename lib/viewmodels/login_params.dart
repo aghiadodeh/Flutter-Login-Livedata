@@ -3,7 +3,6 @@ import 'package:flutterx_live_data/flutterx_live_data.dart';
 import '../models/auth_models/email.dart';
 import '../models/auth_models/password.dart';
 import '../models/responses/error/backend_error.dart';
-import '../models/responses/login_response/login_response.dart';
 
 class LoginParams {
   /// user email, update value on emailInput textChanges

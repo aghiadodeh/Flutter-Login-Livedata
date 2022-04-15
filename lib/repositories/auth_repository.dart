@@ -16,8 +16,8 @@ class AuthenticationRepository {
   }
 
   Future<BaseResponse<T>> catchError<T>(e) async {
-    var response;
-    var message;
+    Map? response;
+    String? message;
     if (e is DioError) {
       if (e.response != null && e.response!.data is Map) {
         response = e.response!.data as Map<String, dynamic>;
