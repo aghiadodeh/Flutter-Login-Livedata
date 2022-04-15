@@ -15,24 +15,16 @@ class EmailInput extends StatelessWidget {
       data: viewModel.loginParams.email,
       builder: (_, email) {
         return TextFormField(
-          key: const Key("login_email"),
+          key: const Key("login_email"), // keep the input value when rebuild
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
             labelText: "Email",
             hintText: "Enter Your Email",
             errorText: email.value.isNotEmpty ? email.error?.name : null,
           ),
-          onChanged: (value) => viewModel.emailChanged(value),
+          onChanged: (value) => viewModel.emailChanged(value), // update login-prarms email value
         );
       },
     );
   }
 }
-
-/**
- labelText: "email".tr(),
-          hintText: "enter_your_email".tr(),
-          keyboardType: TextInputType.emailAddress,
-          onTextChanged: (value) => viewModel.emailChanged(value),
-          errorText: email.value.isNotEmpty ? email.error?.name : null,
- */

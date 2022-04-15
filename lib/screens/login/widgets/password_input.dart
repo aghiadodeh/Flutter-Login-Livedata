@@ -15,7 +15,7 @@ class PasswordInput extends StatelessWidget {
       data: viewModel.loginParams.password,
       builder: (_, password) {
         return TextFormField(
-          key: const Key("login_password"),
+          key: const Key("login_password"), // keep the input value when rebuild
           keyboardType: TextInputType.text,
           obscureText: true,
           decoration: InputDecoration(
@@ -23,17 +23,9 @@ class PasswordInput extends StatelessWidget {
             hintText: "Enter Your Password",
             errorText: password.value.isNotEmpty ? password.error?.name : null,
           ),
-          onChanged: (value) => viewModel.passwordChanged(value),
+          onChanged: (value) => viewModel.passwordChanged(value), // update login-prarms password value
         );
       },
     );
   }
 }
-
-/**
- labelText: "password".tr(),
-          hintText: "enter_your_password".tr(),
-          keyboardType: TextInputType.passwordAddress,
-          onTextChanged: (value) => viewModel.passwordChanged(value),
-          errorText: password.value.isNotEmpty ? password.error?.name : null,
- */
