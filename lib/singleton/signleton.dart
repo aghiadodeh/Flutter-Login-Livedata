@@ -9,3 +9,8 @@ void registerSingleton<T extends Object>(T instance) {
 T getSingleton<T extends Object>() {
   return GetIt.I.get<T>();
 }
+
+/// remove global instance
+Future<void> unregisterSinglton<T extends Object>() async {
+  await GetIt.I.unregister<T>();
+}

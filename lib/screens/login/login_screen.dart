@@ -17,12 +17,27 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final viewModel = getSingleton<LoginViewModel>()..clear();
+  final viewModel = LoginViewModel();
 
   void showSnackBar({required String message}) {
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  @override
+  void initState() {
+    /// create global instance in parent widget
+    registerSingleton<LoginViewModel>(viewModel);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    /// remove global loginViewModel instance
+    /// no need for keep the class in memory
+    unregisterSinglton<LoginViewModel>();
+    super.dispose();
   }
 
   @override

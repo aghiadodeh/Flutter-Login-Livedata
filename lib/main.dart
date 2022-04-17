@@ -1,14 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_state_managment/screens/login/login_screen.dart';
-import 'singleton/signleton.dart';
-import 'viewmodels/login_viewmodel.dart';
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = AppHttpOverrides();
-  registerSingleton<LoginViewModel>(LoginViewModel()); // create a global instance
   runApp(const MyApp());
 }
 
